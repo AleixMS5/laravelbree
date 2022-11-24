@@ -27,5 +27,18 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+Route::middleware('autrntication')->group(function () {
+    Route::get('/privada1', function () {
+//    if (!Auth::check()){
+//       return redirect('/login');
+//    }
+        echo("privasa1");
+    });
+    Route::get('/privada2', function () {
+        echo ("privada2");
+    });
 
-require __DIR__.'/auth.php';
+});
+
+
+require __DIR__ . '/auth.php';
